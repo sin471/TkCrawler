@@ -1,2 +1,1 @@
-hoge2
-hogehoge2
+hogemaster
