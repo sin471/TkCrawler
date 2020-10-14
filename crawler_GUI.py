@@ -9,7 +9,7 @@ def crawling():
 
 
 root = Tk()
-root.title('crawler_GUI')
+root.title('画像収集')
 
 # ウィジェットの作成
 frame1 = ttk.Frame(root, padding=14)
@@ -18,22 +18,23 @@ folder = StringVar()
 word = StringVar()
 num = IntVar()
 
-label1 = ttk.Label(frame1, text='Folder name')
+label1 = ttk.Label(frame1, text='自動でフォルダを新規作成し、そこに画像を保存します')
+label2 = ttk.Label(frame1, text='フォルダ名')
 entry1 = ttk.Entry(frame1, textvariable=folder)
 
-label2 = ttk.Label(frame1, text='Search words')
+label3 = ttk.Label(frame1, text='検索語句')
 entry2 = ttk.Entry(frame1, textvariable=word)
 
-label3 = ttk.Label(frame1, text='num')
+label4 = ttk.Label(frame1, text='収集枚数')
 entry3 = ttk.Entry(frame1, textvariable=num)
 
-
+#TO DO:スピンボタンの追加
 button1 = ttk.Button(
     frame1,
-    text='Run',
+    text='実行',
     command=crawling)
 
-pac = [label1, entry1, label2, entry2, label3, entry3, button1]
+pac = [label1, label2, entry1, label3, entry2, label4, entry3, button1]
 # レイアウト
 frame1.pack()
 for a in pac:
