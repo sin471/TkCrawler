@@ -24,16 +24,16 @@ entry1 = ttk.Entry(frame1, textvariable=folder)
 
 label3 = ttk.Label(frame1, text='検索語句')
 entry2 = ttk.Entry(frame1, textvariable=word)
-
+#todo:全角数字変換
 label4 = ttk.Label(frame1, text='収集枚数')
 entry3 = ttk.Entry(frame1, textvariable=num)
 
-#TO DO:スピンボタンの追加
+#todo:スピンボタンの追加
 button1 = ttk.Button(
     frame1,
     text='実行',
     command=crawling)
-
+#todo:配置方法の変更
 pac = [label1, label2, entry1, label3, entry2, label4, entry3, button1]
 # レイアウト
 frame1.pack()
