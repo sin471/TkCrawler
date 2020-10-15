@@ -31,13 +31,12 @@ button1 = ttk.Button(
     frame1,
     text='実行',
     command=crawling)
-# todo:配置方法の変更
-pac = [label1, label2, entry1, label3, entry2, label4, entry3, button1]
+
+widget = [frame1,label1, label2, entry1, label3, entry2, label4, entry3, button1]
 #todo:終了時にポップアップ
 #レイアウト
-frame1.pack()
-for a in pac:
-    a.pack(anchor=NW)
+for a in widget:
+    a.grid(row=widget.index(a))
 
 # ウィンドウの表示開始
 root.mainloop()
