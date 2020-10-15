@@ -16,7 +16,7 @@ num = IntVar()
 # ウィジェットの作成
 frame1 = ttk.Frame(root, padding=14)
 
-label1 = ttk.Label(frame1, text='自動でフォルダを新規作成し、そこに画像を保存します')
+label1 = ttk.Label(frame1, text='自動でフォルダを作成し\nそこに画像を保存します')
 label2 = ttk.Label(frame1, text='フォルダ名')
 entry1 = ttk.Entry(frame1, textvariable=folder)
 
