@@ -23,7 +23,7 @@ entry1 = ttk.Entry(frame1, textvariable=folder)
 label3 = ttk.Label(frame1, text='検索語句')
 entry2 = ttk.Entry(frame1, textvariable=word)
 
-label4 = ttk.Label(frame1, text='収集枚数')
+label4 = ttk.Label(frame1, text='収集枚数(半角数字)')
 entry3 = ttk.Entry(frame1, textvariable=num)
 
 # todo:スピンボタンの追加
