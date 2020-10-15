@@ -1,22 +1,26 @@
 from tkinter import *
 from tkinter import ttk
 from icrawler.builtin import BingImageCrawler
-
+import string
 
 def crawling():
     crawler = BingImageCrawler(storage={"root_dir": folder.get()})
-    crawler.crawl(keyword=word.get(), max_num=num.get())
+    crawler.crawl(keyword=word.get(), max_num=num.translate(table))
 
+#型の変換
+folder = StringVar()
+word = StringVar()
+num = IntVar()
+
+#数字の全半角変換
+table=str.maketrans("０１２３４５６７８９",string.digits)
+num
 
 root = Tk()
 root.title('画像収集')
 
 # ウィジェットの作成
 frame1 = ttk.Frame(root, padding=14)
-
-folder = StringVar()
-word = StringVar()
-num = IntVar()
 
 label1 = ttk.Label(frame1, text='自動でフォルダを新規作成し、そこに画像を保存します')
 label2 = ttk.Label(frame1, text='フォルダ名')
