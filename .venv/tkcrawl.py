@@ -11,7 +11,7 @@ def crawling():
 
 
 root = Tk()
-root.title('画像収集')
+root.title('TkCrawler')
 
 folder = StringVar()
 word = StringVar()
