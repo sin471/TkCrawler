@@ -5,6 +5,9 @@ word=input("Keyword>>>")
 num=input("Num>>>")
 path=input("Folder Path>>>")
 
+if path=="":
+    path=folder
+
 dest=path+"\\"+folder
 
 crawler = BingImageCrawler(storage={"root_dir": dest})
