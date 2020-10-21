@@ -4,14 +4,15 @@ from tkinter import filedialog as dia
 import tkinter.messagebox as tkmsg
 from icrawler.builtin import BingImageCrawler
 from tkinter import filedialog
+import subprocess
+
 
 # クロール
-
-
 def crawling():
     crawler = BingImageCrawler(storage={"root_dir": path.get()})
     crawler.crawl(keyword=word.get(), max_num=num.get())
-    tkmsg.showinfo("", "完了しました")
+    open_folder()
+    #tkmsg.showinfo("", "完了しました")
 
 
 # フォルダー参照
@@ -22,7 +23,12 @@ def folder_select():
     entry_path.insert(0, folder_path)  # パスの表示
 
 
-# ウィジェットの作成
+def open_folder():
+    path2 = path.get().replace('/', '\\')
+    subprocess.Popen(["explorer", path2])
+
+
+# ウィンドウの作成
 root = Tk()
 root.title('TkCrawler')
 
@@ -35,7 +41,7 @@ path = StringVar()
 style = ttk.Style()
 style.configure(".", font=("メイリオ", 10))
 
-
+# ウィジェットの作成
 frame1 = ttk.Frame(root, padding=14)
 frame1.grid(row=1, columnspan=3)
 
@@ -63,6 +69,7 @@ entry_path.grid(columnspan=3, row=8, sticky=W)
 
 button_path = ttk.Button(frame1, text="参照", width=6, command=folder_select)
 button_path.grid(column=2, row=8, sticky=E)
+
 
 run_button = ttk.Button(frame1, text='実行', command=crawling, width=18)
 run_button.grid(row=9, columnspan=3)
