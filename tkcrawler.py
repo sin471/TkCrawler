@@ -19,13 +19,13 @@ def folder_select():
     folder_path = dia.askdirectory(initialdir=idir)
     entry_path.delete(0, END)
     entry_path.insert(0, folder_path)  # パスの表示
-    #make_folder = folder_path+"\\"+str(folder.get)
+
 
 
 root = Tk()
 root.title('TkCrawler')
 
-#folder = StringVar()
+
 word = StringVar()
 num = IntVar()
 path = StringVar()
@@ -52,12 +52,8 @@ spin_num = ttk.Spinbox(
     width=20,
     font=("メイリオ", 10))
 
-"""label_foldername = ttk.Label(frame1, text='フォルダ名')
-entry_foldername = ttk.Entry(
-    frame1, textvariable=folder, width=22, font=("メイリオ", 10))"""
 
 
-# todo:word folder_select 変数
 label_path = ttk.Label(frame1, text='フォルダの保存先')
 entry_path = ttk.Entry(frame1, width=14, font=("メイリオ", 10), textvariable=path)
 button_path = ttk.Button(frame1, text="参照", width=6, command=folder_select)
